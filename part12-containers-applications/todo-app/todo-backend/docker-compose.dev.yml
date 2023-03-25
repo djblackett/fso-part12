@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.8'
 services:
   mongo:
     image: mongo
@@ -8,5 +8,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
       MONGO_INITDB_DATABASE: the_database
-      volumes:
-        - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+    volumes:
+      - C:/Users/djbla/OneDrive/Documents/dev/fullStackOpen parent-dir/part12/part12-containers-applications/todo-app/todo-backend/mongo/mongo-init/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - mongo_data:/data/db
+volumes:
+  mongo_data:

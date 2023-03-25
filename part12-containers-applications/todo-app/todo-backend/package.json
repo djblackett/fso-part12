@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "start": "cross-env MONGO_URL=mongodb://localhost:3456/the_database cross-env PASSWORD=example cross-env USERNAME=root node ./bin/www",
+    "start:mongo": "docker run --name mongo-1 -v /mongo/mongo-init:/data/db -d mongo",
+    "dev": "cross-env MONGO_URL=mongodb://127.0.0.1:3456/the_database nodemon ./bin/www"
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "debug": "~2.6.9",
+    "dot-env": "^0.0.1",
     "express": "~4.16.1",
     "mongoose": "^5.13.2",
     "morgan": "~1.9.1",
