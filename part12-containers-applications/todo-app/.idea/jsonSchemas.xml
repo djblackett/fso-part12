@@ -17,6 +17,9 @@
                   <Item>
                     <option name="path" value="todo-backend/test.dev.yml" />
                   </Item>
+                  <Item>
+                    <option name="path" value="todo-frontend/docker-compose.yml" />
+                  </Item>
                 </list>
               </option>
             </SchemaInfo>
