@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "cross-env MONGO_URL=mongodb://localhost:3456/the_database cross-env PASSWORD=example cross-env USERNAME=root node ./bin/www",
+    "start": "REDIS_URL=redis://localhost:6379 MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database node ./bin/www",
     "start:mongo": "docker run --name mongo-1 -v /mongo/mongo-init:/data/db -d mongo",
     "dev": "nodemon ./bin/www",
-    "dev1": "REDIS_URL=redis://localhost:6379 MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database nodemon ./bin/www"
+    "dev1": "REDIS_URL=redis://localhost:6379 MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database node ./bin/www"
   },
   "dependencies": {
     "cors": "^2.8.5",
