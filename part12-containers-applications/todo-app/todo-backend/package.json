@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "REDIS_URL=redis://localhost:6379 MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database node ./bin/www",
+    "start": "node ./bin/www",
     "start:mongo": "docker run --name mongo-1 -v /mongo/mongo-init:/data/db -d mongo",
-    "dev": "nodemon ./bin/www",
-    "dev1": "REDIS_URL=redis://localhost:6379 MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database node ./bin/www"
+    "dev": "REDIS_URL=redis://redis:6379 MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database?directConnection=true nodemon ./bin/www",
+    "dev1": "REDIS_URL=redis://redis:6379 MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database node ./bin/www"
   },
   "dependencies": {
     "cors": "^2.8.5",

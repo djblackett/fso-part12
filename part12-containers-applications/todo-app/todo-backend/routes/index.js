@@ -21,4 +21,8 @@ router.get("/statistics", async (req, res) => {
   res.json({added_todos: Number(added)});
 })
 
+router.get("/test", async (req, res) => {
+  res.json({message: "Hot reloading works on the backend end too!"})
+})
+
 module.exports = router;
